@@ -11,7 +11,7 @@ echo Deoloying TTMI Project from $SERVER
 echo Packing TTMI Project
 cat << EOF > /tmp/CMD.txt
 cd $TTMI_HOME
-tar zcvf $TMP_DIR/$TAR_FILE . --exclude .git*
+tar zcvf $TMP_DIR/$TAR_FILE . --exclude .git* a-bin
 EOF
 CMD=`cat /tmp/CMD.txt`
 rm /tmp/CMD.txt
@@ -31,3 +31,4 @@ ssh $USER@$SERVER "$CMD"
 echo Unpacking TTMI Project
 tar zxvf ./$TAR_FILE -C $DEPLOY_HOME
 rm ./$TAR_FILE
+
