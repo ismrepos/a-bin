@@ -2,7 +2,8 @@
 
 SERVER=ura1
 USER=khonda
-TTMI_HOME=/home/$USER/Projects/
+TTMI_DIR=/home/$USER/Projects/
+TTMI_HOME=ttmi
 TAR_FILE=hoge.tar.gz
 TMP_DIR=/home/$USER/tmp
 DEPLOY_HOME=~/
@@ -10,8 +11,8 @@ echo Deoloying TTMI Project from $SERVER
 
 echo Packing TTMI Project
 cat << EOF > /tmp/CMD.txt
-cd $TTMI_HOME
-tar zcvf $TMP_DIR/$TAR_FILE . --exclude .git* /a-bin
+cd $TTMI_DIR
+tar zcvf $TMP_DIR/$TAR_FILE --exclude .git* $TTMI_HOME
 EOF
 CMD=`cat /tmp/CMD.txt`
 rm /tmp/CMD.txt
@@ -31,4 +32,3 @@ ssh $USER@$SERVER "$CMD"
 echo Unpacking TTMI Project
 tar zxvf ./$TAR_FILE -C $DEPLOY_HOME
 rm ./$TAR_FILE
-
