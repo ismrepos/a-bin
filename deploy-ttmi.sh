@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SERVER=ura1
-USER=khonda
+USER=tdev
 TTMI_DIR=/home/$USER/Projects/
 TTMI_HOME=ttmi
 TAR_FILE=hoge.tar.gz
