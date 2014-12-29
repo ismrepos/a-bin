@@ -4,7 +4,7 @@ SERVER=ura1
 USER=tdev
 TTMI_DIR=/home/$USER/Projects/
 TTMI_HOME=ttmi
-TAR_FILE=hoge.tar.gz
+TAR_FILE=ttmi.tar.gz
 TMP_DIR=/home/$USER/tmp
 DEPLOY_HOME=~/
 echo Deoloying TTMI Project from $SERVER
