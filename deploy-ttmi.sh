@@ -11,7 +11,7 @@ echo Deoloying TTMI Project from $SERVER
 
 echo Packing TTMI Project
 
-if ["$1" != "csv" ]
+if [ "$1" != "csv" ]
 then
 cat << EOF > /tmp/CMD.txt
 cd $TTMI_DIR
