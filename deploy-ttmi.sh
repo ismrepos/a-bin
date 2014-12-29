@@ -12,7 +12,7 @@ echo Deoloying TTMI Project from $SERVER
 echo Packing TTMI Project
 cat << EOF > /tmp/CMD.txt
 cd $TTMI_DIR
-tar zcvf $TMP_DIR/$TAR_FILE -X .tarignore $TTMI_HOME
+tar zcvf $TMP_DIR/$TAR_FILE -X $TTMI_HOME/.tarignore $TTMI_HOME
 EOF
 CMD=`cat /tmp/CMD.txt`
 rm /tmp/CMD.txt
