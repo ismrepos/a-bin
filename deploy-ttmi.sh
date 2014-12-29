@@ -10,10 +10,19 @@ DEPLOY_HOME=~/
 echo Deoloying TTMI Project from $SERVER
 
 echo Packing TTMI Project
+
+if ["$1" != "csv" ]
+then
 cat << EOF > /tmp/CMD.txt
 cd $TTMI_DIR
 tar zcvf $TMP_DIR/$TAR_FILE -X $TTMI_HOME/.tarignore $TTMI_HOME
 EOF
+else
+cat << EOF > /tmp/CMD.txt
+cd $TTMI_DIR
+tar zcvf $TMP_DIR/$TAR_FILE --exclude .git* $TTMI_HOME/csv
+EOF
+fi
 CMD=`cat /tmp/CMD.txt`
 rm /tmp/CMD.txt
 ssh $USER@$SERVER "$CMD"
