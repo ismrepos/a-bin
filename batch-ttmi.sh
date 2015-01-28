@@ -6,7 +6,5 @@
 #PBS -o out_file
 #PBS -j oe
 
-cd ~/ttmi
-dplace ./bin/run.sh
-
-
+cd ~/ttmi/src
+dplace ./ttmi input_file_origin.txt
