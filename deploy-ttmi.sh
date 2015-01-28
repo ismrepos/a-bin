@@ -10,23 +10,23 @@ DEPLOY_HOME=~/
 echo Deoloying TTMI Project from $SERVER
 
 case "$1" in
-  "csv")
-    echo Packing CSV files
-    cat << EOF > /tmp/CMD.txt
-    cd $TTMI_DIR
-    tar zcvf $TMP_DIR/$TAR_FILE --exclude .git* $TTMI_HOME/csv
-    EOF
-    ;;
-  "batch")
-    echo Packing batch files
-    ;;
-  *)
-    echo Packing TTMI Project
-    cat << EOF > /tmp/CMD.txt
-    cd $TTMI_DIR
-    tar zcvf $TMP_DIR/$TAR_FILE -X $TTMI_HOME/.tarignore $TTMI_HOME
-    EOF
-    ;;
+"csv")
+echo Packing CSV files
+cat << EOF > /tmp/CMD.txt
+cd $TTMI_DIR
+tar zcvf $TMP_DIR/$TAR_FILE --exclude .git* $TTMI_HOME/csv
+EOF
+;;
+"batch")
+echo Packing batch files
+;;
+*)
+echo Packing TTMI Project
+cat << EOF > /tmp/CMD.txt
+cd $TTMI_DIR
+tar zcvf $TMP_DIR/$TAR_FILE -X $TTMI_HOME/.tarignore $TTMI_HOME
+EOF
+;;
 esac
 
 CMD=`cat /tmp/CMD.txt`
