@@ -4,7 +4,7 @@ SERVER=ura1
 USER=tdev
 TTMI_DIR=/home/$USER/Projects/
 TTMI_HOME=ttmi
-ABIN_HOME="a-bin"
+ABIN_HOME=bin
 TAR_FILE=ttmi.tar.gz
 TMP_DIR=/home/$USER/tmp
 DEPLOY_HOME=~/
@@ -21,7 +21,7 @@ EOF
 "batch")
 echo Packing batch files
 cat << EOF > /tmp/CMD.txt
-cd $TTM_DIR
+cd $TTMI_DIR
 tar zcvf $TMP_DIR/$TAR_FILE --exclude .git* $ABIN_HOME/batch*.sh
 EOF
 ;;
